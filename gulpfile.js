@@ -9,10 +9,7 @@ gulp.task('clean', () => del('dist'));
 gulp.task('compile', ['clean'], () =>
   gulp.src('./src/**/*.js')
     .pipe(plumber())
-    .pipe(babel({
-      presets: ['@babel/env'],
-      plugins: ['@babel/transform-runtime', 'transform-class-properties']
-    }))
+    .pipe(babel())
     .pipe(gulp.dest('dist'))
 );
 
