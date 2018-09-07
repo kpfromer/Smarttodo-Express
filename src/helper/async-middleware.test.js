@@ -19,4 +19,10 @@ describe('async middleware', () => {
     await asyncMiddleware(errorFunction)(req, res, next);
     expect(next).toHaveBeenCalledWith(Error('ERROR'));
   });
+  it('returns a promise', async () => {
+    next.mockImplementation(value => value);
+    const mockMiddleware = (req, res, next) => next('hello world!');
+    const returnValue = await asyncMiddleware(mockMiddleware)(req, res, next);
+    expect(returnValue).toBe('hello world!');
+  })
 });
