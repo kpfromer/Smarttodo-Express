@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`error error handling catches internal server errors and makes them into 500 status 1`] = `
+Object {
+  "error": "Internal Server Error",
+  "message": "An internal server error occurred",
+  "statusCode": 500,
+}
+`;
+
 exports[`error error handling displays custom errors as json 1`] = `
 Object {
   "error": "Bad Request",

@@ -33,5 +33,16 @@ describe('error', () => {
       expect(res.status).toBe(400);
       expect(res.body).toMatchSnapshot();
     });
+    it('catches internal server errors and makes them into 500 status', async () => {
+      const app = express();
+      app.get('/error', (req, res) => {
+        throw new Error('Something went wrong in code');
+      });
+      app.use(errorMiddleware);
+
+      const res = await request(app).get('/error');
+      expect(res.status).toBe(500);
+      expect(res.body).toMatchSnapshot();
+    })
   });
 });
