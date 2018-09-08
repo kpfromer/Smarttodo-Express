@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error displays custom errors as json 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": "Bad user input",
+  "statusCode": 400,
+}
+`;
