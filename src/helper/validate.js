@@ -1,4 +1,5 @@
 import joi from 'joi';
+import boom from 'boom';
 import { promisify } from 'util';
 import asyncMiddleware from './async-middleware';
 
@@ -9,11 +10,6 @@ export default joiSchema => asyncMiddleware(async (req, res, next) => {
       next();
     })
     .catch(error => 
-      next({
-        statusCode: 422, // TODO: make sure is right
-        error: 'Unprocessable Entity',
-        message: error.name,
-        validation: error.details
-      })
+      next(boom.badData(undefined, { validation: error.details }))
     );
 })

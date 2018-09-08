@@ -2,27 +2,6 @@
 
 exports[`validate handles error if data doesn't match joi schema 1`] = `
 Array [
-  Object {
-    "error": "Unprocessable Entity",
-    "message": "ValidationError",
-    "statusCode": 422,
-    "validation": Array [
-      Object {
-        "context": Object {
-          "invalids": Array [
-            "",
-          ],
-          "key": "name",
-          "label": "name",
-          "value": "",
-        },
-        "message": "\\"name\\" is not allowed to be empty",
-        "path": Array [
-          "name",
-        ],
-        "type": "any.empty",
-      },
-    ],
-  },
+  [Error: Unprocessable Entity],
 ]
 `;
