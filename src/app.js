@@ -8,7 +8,7 @@ import { error, notFound } from './modules/error/error';
 import config from './config';
 
 mongoose.connect(config.get('db.url'), { useMongoClient: true });
-passport.use(jwtStrategy);
+passport.use(jwtStrategy());
 
 const app = express();
 // Express Config
