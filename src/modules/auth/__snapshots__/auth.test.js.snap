@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`auth loginUser errors if passwords don't match 1`] = `[Error: Username/password do not match]`;
+
+exports[`auth loginUser errors if the user doesn't exist 1`] = `[Error: Username/password do not match]`;
+
+exports[`auth loginUser logins in the user 1`] = `
+Array [
+  Object {
+    "id": "the-id-of-the-user",
+  },
+  "JWT-SECRET-TESTING",
+  Object {
+    "expiresIn": "JWT-EXPIRE-IN",
+  },
+]
+`;
+
+exports[`auth loginUser logins in the user 2`] = `
+Object {
+  "access_token": "ENCRYPTED-JWT-TOKEN",
+}
+`;
+
+exports[`auth registerUser creates a user 1`] = `
+Object {
+  "message": "Successfully registered",
+  "success": true,
+}
+`;
+
+exports[`auth registerUser throws an error when email is already taken 1`] = `[Error: Email already taken]`;
+
+exports[`auth registerUser throws an error when username is already taken 1`] = `[Error: Username already taken]`;
