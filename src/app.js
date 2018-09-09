@@ -2,8 +2,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import { error, notFound } from './modules/error/error';
+import config from './config';
 
-mongoose.connect('mongodb://localhost:27017/smarttodo-express', { useMongoClient: true });
+mongoose.connect(config.get('db.url'), { useMongoClient: true });
 
 const app = express();
 // Express Config
@@ -13,4 +14,4 @@ app.use(bodyParser.json());
 app.use(notFound);
 app.use(error);
 
-app.listen(3000, () => console.log('listening on port 3000'));
+app.listen(config.get('port'), () => console.log(`listening on port ${config.get('port')}`));
