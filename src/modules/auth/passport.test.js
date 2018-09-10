@@ -30,14 +30,15 @@ describe('passport jwt strategy', () => {
         exec
       });
     });
-    it('resolves true if there is a user by id', async () => {
-      exec.mockResolvedValue(true);
+    it('resolves the user if there is a user by id', async () => {
+      const mockUser = jest.fn();
+      exec.mockResolvedValue(mockUser);
       const jwtPayload = {
         id: 'user-id'
       }
       const value = await findUser(jwtPayload);
       expect(User.findOne).toHaveBeenCalledWith({ _id: jwtPayload.id });
-      expect(value).toBe(true);
+      expect(value).toBe(mockUser);
     });
     it('resolves false if there is no user by id', async () => {
       exec.mockResolvedValue(false);

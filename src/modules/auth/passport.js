@@ -4,7 +4,10 @@ import config from '../../config';
 
 export const findUser = async jwtPayload => {
   const user = await User.findOne({ _id: jwtPayload.id }).exec();
-  return !!user;
+  if (!!user) {
+    return user;
+  }
+  return false;
 }
 
 export const errorCatcher = asyncFn => (jwtPayload, done) =>
