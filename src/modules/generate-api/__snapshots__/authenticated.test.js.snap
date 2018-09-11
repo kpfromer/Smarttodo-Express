@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authenticated create responds with json of newly created database object 1`] = `
+Array [
+  Object {
+    "id": "12152",
+    "name": "new jacky",
+  },
+]
+`;
+
+exports[`authenticated findAll responds with json of all items 1`] = `
+Array [
+  Array [
+    Object {
+      "id": "1",
+      "name": "jack kennedy",
+    },
+    Object {
+      "id": "2",
+      "name": "barack obama",
+    },
+    Object {
+      "id": "3",
+      "name": "ronald reagan",
+    },
+  ],
+]
+`;
+
+exports[`authenticated getById responds with json of object 1`] = `
+Array [
+  Object {
+    "id": "12152",
+    "name": "jack nicholson",
+  },
+]
+`;
+
+exports[`authenticated patch responds with json of newly updated database object 1`] = `
+Array [
+  Object {
+    "id": "2020",
+    "name": "completely updated person (must had partial plastic surgery)",
+  },
+]
+`;
+
+exports[`authenticated put responds with json of newly updated database object 1`] = `
+Array [
+  Object {
+    "id": "666",
+    "name": "completely updated person (must had some plastic surgery and went into the witness protection program)",
+  },
+]
+`;
+
+exports[`authenticated remove responds with json of all items 1`] = `
+Array [
+  Object {
+    "nRemoved": 1,
+    "ok": 1,
+  },
+]
+`;
