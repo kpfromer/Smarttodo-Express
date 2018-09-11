@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import passport from 'passport';
@@ -12,6 +13,7 @@ passport.use(jwtStrategy());
 
 const app = express();
 // Express Config
+app.use(cors())
 app.use(bodyParser.json());
 app.use(passport.initialize());
 
