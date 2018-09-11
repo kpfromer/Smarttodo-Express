@@ -58,7 +58,7 @@
     ],
     "rootDir": "src",
     "testRegex": ".test.js$",
-    "coverageDirectory": "./coverage",
+    "coverageDirectory": "../coverage",
     "resetMocks": true
   }
 }
