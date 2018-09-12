@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import passport from 'passport';
 import jwtStrategy from './modules/auth/passport';
-import authRoutes from './modules/auth/auth-routes';
+import routes from './routes';
 import { error, notFound } from './modules/error/error';
 import config from './config';
 
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 
 // Routes
-app.use('/auth', authRoutes);
+app.use('/v1/', routes);
 
 // Error handling
 app.use(notFound);
