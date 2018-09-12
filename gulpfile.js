@@ -7,13 +7,13 @@ const del = require('del');
 gulp.task('clean', () => del('dist'));
 
 gulp.task('compile', ['clean'], () =>
-  gulp.src('./src/**/*.js')
+  gulp.src(['./src/**/*.js', '!./src/**/*.test.js'])
     .pipe(plumber())
     .pipe(babel())
     .pipe(gulp.dest('dist'))
 );
 
-gulp.task('watch', () => 
+gulp.task('watch', ['compile'], () => 
   nodemon({
     script: 'dist/app.js',
     watch: 'src',
