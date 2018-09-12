@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Except
+!dist/
+!package.json
+!package-lock.json
+
+# Ignore node_modules
+node_modules

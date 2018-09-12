@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "start:prod": "node dist/app.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
