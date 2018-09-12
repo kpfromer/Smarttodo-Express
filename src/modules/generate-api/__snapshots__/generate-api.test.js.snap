@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generate api DELETE /:id errors if id is not valid mongo id 1`] = `
+Object {
+  "error": Object {},
+}
+`;
+
+exports[`generate api DELETE /:id removes the item by id 1`] = `
+Object {
+  "nOk": 1,
+  "nRemoved": 1,
+}
+`;
+
+exports[`generate api GET / returns all items 1`] = `
+Array [
+  Object {
+    "id": "1",
+    "name": "kyle",
+  },
+  Object {
+    "id": "2",
+    "name": "edward",
+  },
+]
+`;
+
+exports[`generate api GET /:id errors if id is not a valid mongo id 1`] = `
+Object {
+  "error": Object {},
+}
+`;
+
+exports[`generate api GET /:id gets the item by id 1`] = `
+Object {
+  "id": "5b93f9524458c6452947afdd",
+  "name": "jack bike",
+}
+`;
+
+exports[`generate api PATCH /:id errors if body is not valid patchDto 1`] = `
+Object {
+  "error": Object {
+    "data": Object {
+      "validation": Array [
+        Object {
+          "context": Object {
+            "label": "value",
+            "peers": Array [
+              "name",
+              "age",
+            ],
+            "peersWithLabels": Array [
+              "name",
+              "age",
+            ],
+          },
+          "message": "\\"value\\" must contain at least one of [name, age]",
+          "path": Array [],
+          "type": "object.missing",
+        },
+      ],
+    },
+    "isBoom": true,
+    "isServer": false,
+    "message": "Unprocessable Entity",
+    "output": Object {
+      "headers": Object {},
+      "payload": Object {
+        "error": "Unprocessable Entity",
+        "message": "Unprocessable Entity",
+        "statusCode": 422,
+      },
+      "statusCode": 422,
+    },
+  },
+}
+`;
+
+exports[`generate api PATCH /:id errors if id is invalid mongo id 1`] = `
+Object {
+  "error": Object {},
+}
+`;
+
+exports[`generate api PATCH /:id updates a task by id 1`] = `
+Object {
+  "age": 18,
+  "id": "123",
+  "name": "same-name-different-age",
+}
+`;
+
+exports[`generate api POST / errors if the body is not valid 1`] = `
+Object {
+  "error": Object {
+    "data": Object {
+      "validation": Array [
+        Object {
+          "context": Object {
+            "key": "name",
+            "label": "name",
+          },
+          "message": "\\"name\\" is required",
+          "path": Array [
+            "name",
+          ],
+          "type": "any.required",
+        },
+      ],
+    },
+    "isBoom": true,
+    "isServer": false,
+    "message": "Unprocessable Entity",
+    "output": Object {
+      "headers": Object {},
+      "payload": Object {
+        "error": "Unprocessable Entity",
+        "message": "Unprocessable Entity",
+        "statusCode": 422,
+      },
+      "statusCode": 422,
+    },
+  },
+}
+`;
+
+exports[`generate api POST / gets the item with the validated body 1`] = `
+Object {
+  "age": 123,
+  "id": "235dsadf4",
+  "name": "jack mike",
+}
+`;
+
+exports[`generate api PUT /:id errors if body is not valid createDto 1`] = `
+Object {
+  "error": Object {
+    "data": Object {
+      "validation": Array [
+        Object {
+          "context": Object {
+            "invalids": Array [
+              "",
+            ],
+            "key": "name",
+            "label": "name",
+            "value": "",
+          },
+          "message": "\\"name\\" is not allowed to be empty",
+          "path": Array [
+            "name",
+          ],
+          "type": "any.empty",
+        },
+      ],
+    },
+    "isBoom": true,
+    "isServer": false,
+    "message": "Unprocessable Entity",
+    "output": Object {
+      "headers": Object {},
+      "payload": Object {
+        "error": "Unprocessable Entity",
+        "message": "Unprocessable Entity",
+        "statusCode": 422,
+      },
+      "statusCode": 422,
+    },
+  },
+}
+`;
+
+exports[`generate api PUT /:id errors if id is invalid mongo id 1`] = `
+Object {
+  "error": Object {},
+}
+`;
+
+exports[`generate api PUT /:id updates a task by id 1`] = `
+Object {
+  "age": 18,
+  "id": "123",
+  "name": "new name",
+}
+`;
