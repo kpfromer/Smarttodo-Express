@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "build": "gulp compile",
     "start:prod": "node dist/app.js",
     "test": "jest",
     "test:watch": "jest --watch",
