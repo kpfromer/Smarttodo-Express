@@ -7,4 +7,20 @@ cache:
 script: 
   - npm test
   - npm run coverage
-  # - npm run build
+before_deploy:
+- git config user.email "kpfromer2@gmail.com" # See travis/dpl#411
+- git config user.name "Kyle Pfromer"
+- git add --force dist
+- git commit -m "Add dist folder for AWS"
+deploy:
+  provider: elasticbeanstalk
+  skip_cleanup: true
+  access_key_id: $ACCESSKEYID
+  secret_access_key:
+    secure: $SECRETACCESSKEY
+  region: "us-west-1"
+  app: "smarttodo-express"
+  env: "SmarttodoExpress-env"
+  bucket_name: $BUCKETNAME
+  on:
+    branch: master
