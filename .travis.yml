@@ -7,11 +7,6 @@ cache:
 script: 
   - npm test
   - npm run coverage
-before_deploy:
-- git config user.email "kpfromer2@gmail.com" # See travis/dpl#411
-- git config user.name "Kyle Pfromer"
-- git add --force dist
-- git commit -m "Add dist folder for AWS"
 deploy:
   provider: elasticbeanstalk
   skip_cleanup: true
