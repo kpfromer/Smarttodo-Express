@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createMongooseModel creates a model using the dynamically generated schema 1`] = `"Model called \\"testitem\\" of \\"[object Object]\\""`;
+
+exports[`mongooseModelObject converts each key into a proper mongoose option 1`] = `
+Object {
+  "name": Object {
+    "required": true,
+    "type": [Function],
+  },
+  "project": Object {
+    "required": true,
+    "type": [Function],
+  },
+}
+`;
+
+exports[`mongooseModelSingleProp mongoose type recursively runs mongooseModelObject if type is an object 1`] = `
+Object {
+  "required": false,
+  "type": Object {
+    "subItemAge": Object {
+      "required": false,
+      "type": [Function],
+    },
+    "subItemTitle": Object {
+      "required": false,
+      "type": [Function],
+    },
+  },
+}
+`;
+
+exports[`mongooseModelSingleProp mongoose type sets type to array if isArray 1`] = `
+Object {
+  "required": false,
+  "type": Array [
+    [Function],
+  ],
+}
+`;
